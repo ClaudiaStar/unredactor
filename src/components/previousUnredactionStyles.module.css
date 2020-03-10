@@ -1,0 +1,40 @@
+.Container {
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  padding: 20px 0;
+}
+
+.ScrollBoxContainer {
+  width: 45vw;
+  text-align: center;
+  margin: 0 10vw;
+  flex-grow: 2;
+}
+
+.ScrollBox {
+  overflow-y: scroll;
+  height: 500px;
+  max-height: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 3px solid #b6b6b6;
+}
+
+.ListItem {
+  background-color: #f0f0f0;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.ImageDiv {
+  width: 30vw;
+  align-self: flex-end;
+}
+
+.ImageDiv img {
+  width: 100%;
+}

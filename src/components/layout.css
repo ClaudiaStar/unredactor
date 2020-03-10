@@ -1,4 +1,21 @@
-html {
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Montserrat";
+  color: #353535;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2.44141rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+/* html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -619,4 +636,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} */

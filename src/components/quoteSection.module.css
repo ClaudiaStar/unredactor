@@ -1,0 +1,22 @@
+.Container {
+  height: 100vh;
+  background-image: url("../images/previousUnredactions.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.Container h3 {
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  font-size: 2.36859rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: montserrat;
+  text-align: left;
+  width: 850px;
+  margin-left: 10vw;
+}

@@ -15,6 +15,13 @@
   flex-grow: 2;
 }
 
+.ScrollBoxContainer strong {
+  font-weight: 700;
+  font-size: 3.15733rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
 .ScrollBox {
   overflow-y: scroll;
   height: 500px;

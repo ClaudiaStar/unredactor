@@ -66,7 +66,9 @@ const PreviousUnredactionsSection = () => {
   return (
     <div className={PreviousUnredactionsStyles.Container}>
       <div className={PreviousUnredactionsStyles.ScrollBoxContainer}>
-        <h1>Previous Unredactions</h1>
+        <h1>
+          <strong>Previous Unredactions</strong>
+        </h1>
         <div className={PreviousUnredactionsStyles.ScrollBox}>
           <div className={PreviousUnredactionsStyles.List}>
             {unredactionsList}

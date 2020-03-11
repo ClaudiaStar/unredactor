@@ -50,7 +50,9 @@ const Hero = () => (
         </IconContext.Provider>
       </div>
       <div className={heroStyles.Unredactor}>
-        <h1>WHAT WOULD YOU LIKE TO UNREDACT?</h1>
+        <h1>
+          <strong>WHAT WOULD YOU LIKE TO UNREDACT?</strong>
+        </h1>
         <h5>
           Type in your redacted paragraph and use the word "unk" for hidden
           words.

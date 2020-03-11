@@ -1,6 +1,6 @@
 .Container {
   height: 100vh;
-  background-image: url("../images/previousUnredactions.png");
+  background-image: url("../images/quote-bg.png");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -12,11 +12,11 @@
 .Container h3 {
   color: rgb(255, 255, 255);
   line-height: 1.2;
-  font-size: 2.36859rem;
+  font-size: 2.37rem;
   font-weight: 500;
   letter-spacing: 1px;
   font-family: montserrat;
   text-align: left;
-  width: 850px;
-  margin-left: 10vw;
+  width: 700px;
+  margin-left: 13vw;
 }

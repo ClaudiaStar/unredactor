@@ -33,7 +33,9 @@
 }
 
 .Unredactor h1 {
-  width: 30vw;
+  width: 35vw;
+  font-weight: 700;
+  font-size: 3.15733rem;
 }
 
 .Unredactor h5 {

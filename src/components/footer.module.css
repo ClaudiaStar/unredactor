@@ -1,0 +1,96 @@
+.Container {
+  height: 90vh;
+  background-color: #272727;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ContactSection {
+  width: 28vw;
+}
+
+.MapSection {
+  width: 28vw;
+}
+
+.ContactSection h6,
+.MapSection h6 {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.ContactSection hr,
+.MapSection hr {
+  width: 250px;
+  border: solid 0.5px;
+  border-color: rgba(255, 255, 255, 0.33);
+}
+
+.ContactSection input {
+  height: 40px;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 22px;
+  color: #33475b;
+  background-color: #f5f8fa;
+  border: 1px solid #cbd6e2;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 15px;
+  text-shadow: none;
+  text-align: start;
+  cursor: text;
+  margin: 8px 0em;
+  font: Arial;
+  box-sizing: border-box;
+}
+
+.ContactSection textarea {
+  width: 100%;
+  margin: 8px 0em;
+  height: auto;
+  padding: 9px 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 22px;
+  color: #33475b;
+  background-color: #f5f8fa;
+  border: 1px solid #cbd6e2;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  font: Arial;
+}
+
+.ContactSection button {
+  background: #ee292a;
+  border-color: #ee292a;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: Montserrat;
+  margin: 20px 0;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 12px;
+  position: relative;
+  text-align: center;
+  padding: 12px 24px;
+}
+
+.MapParagraph {
+  width: 300px;
+  margin: auto;
+}

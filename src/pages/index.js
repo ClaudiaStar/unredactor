@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Hero from "../components/hero"
 import PreviousUnredactionsSection from "../components/previousUnredactions"
 import QuoteSection from "../components/quoteSection"
+import Footer from "../components/footer"
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <Hero />
     <PreviousUnredactionsSection />
     <QuoteSection />
+    <Footer />
   </Layout>
 )
 

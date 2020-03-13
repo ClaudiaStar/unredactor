@@ -1,13 +1,17 @@
+header {
+  height: 10vh;
+}
+
 .Logo {
   height: 55px;
   width: auto;
-  position: fixed;
+  position: absolute;
   top: 23px;
   left: 35px;
 }
 
 .Burger {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 23px;
   width: 60px;

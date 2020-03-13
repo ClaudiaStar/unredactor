@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "./header"
+import CssHeroImage from "./cssHeroImage"
 import heroStyles from "./heroStyles.module.css"
 import { FaFacebook } from "react-icons/fa"
 import { AiFillTwitterCircle } from "react-icons/ai"
@@ -10,6 +11,7 @@ import { IconContext } from "react-icons"
 const Hero = () => (
   <div className={heroStyles.HeroContainer}>
     <Header />
+    <CssHeroImage />
     <div className={heroStyles.HeroContent}>
       <div className={heroStyles.SocialMedia}>
         <IconContext.Provider
@@ -62,13 +64,11 @@ const Hero = () => (
         <button>UNREDACT</button>
         <p style={{ paddingTop: "8px" }}>Here's an example:</p>
         <p style={{ paddingTop: "15px" }}>
-          Beyonce is an <span style={{ fontWeight: "900" }}>unk unk</span> and
-          actress.
+          Beyonce is an <strong>unk unk</strong> and actress.
         </p>
         <p>
           Output: beyonce is an
-          <span style={{ fontWeight: "900" }}>american singer</span> and
-          actress.
+          <strong> American Singer</strong> and actress.
         </p>
       </div>
     </div>

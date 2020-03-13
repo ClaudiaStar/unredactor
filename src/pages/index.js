@@ -6,6 +6,7 @@ import Hero from "../components/hero"
 import PreviousUnredactionsSection from "../components/previousUnredactions"
 import QuoteSection from "../components/quoteSection"
 import Footer from "../components/footer"
+import CssHeroImage from "../components/cssHeroImage"
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <PreviousUnredactionsSection />
     <QuoteSection />
     <Footer />
+    <CssHeroImage />
   </Layout>
 )
 

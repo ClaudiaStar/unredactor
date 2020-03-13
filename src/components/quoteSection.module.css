@@ -17,6 +17,19 @@
   letter-spacing: 1px;
   font-family: montserrat;
   text-align: left;
-  width: 700px;
+  width: 750px;
   margin-left: 13vw;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Container h3 {
+    width: 90vw;
+    margin: 0 5vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .Container h3 {
+    font-size: 1.728rem;
+  }
 }

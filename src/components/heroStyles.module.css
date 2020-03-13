@@ -1,5 +1,6 @@
 .HeroContainer {
   background-image: url("../images/hero-background.png");
+  min-height: 100vh;
   height: 100vh;
   background-position: top;
   background-repeat: no-repeat;
@@ -8,7 +9,6 @@
 }
 
 .HeroContent {
-  padding-top: 80px;
   display: grid;
   grid-template-columns: 20vw 80vw;
   grid-template-rows: 90vh;
@@ -33,12 +33,15 @@
 }
 
 .Unredactor h1 {
-  width: 35vw;
+  position: relative;
+  z-index: 1000;
+  width: 500px;
   font-weight: 700;
   font-size: 3.15733rem;
 }
 
 .Unredactor h5 {
+  z-index: 2;
   color: rgb(51, 51, 51);
   font-size: 1.25rem;
   font-weight: 500;
@@ -55,7 +58,7 @@
   border-radius: 3px 3px 3px 3px;
   background: rgba(255, 255, 255, 0.85);
   height: 50px;
-  padding: 0px 20px 0px 20px;
+  text-indent: 20px;
   transition: border-color 300ms ease;
   margin: 0 0 20px 0;
 }
@@ -89,5 +92,56 @@
 }
 
 .Unredactor p {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media only screen and (max-width: 710px) {
+  .HeroContainer {
+    background-image: none;
+    padding: 0 5vw;
+  }
+  .Unredactor h1 {
+    font-size: 2.0736rem;
+    margin: 10px 0px;
+    width: 80%;
+  }
+  .Unredactor h5 {
+    width: 85%;
+    margin: 10px 0px;
+  }
+  .HeroContent {
+    padding-top: 15vh;
+    grid-template-columns: 100vw;
+    grid-template-rows: auto 10vh;
+    grid-template-areas: "unredactor" "social";
+  }
+  .Unredactor input {
+    width: 90vw;
+    height: 80px;
+  }
+  .SocialMedia {
+    height: 60px;
+    width: 220px;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+    justify-self: center;
+    align-items: center;
+    align-self: flex-start;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .HeroContent {
+    padding-top: 8vh;
+  }
+  .Unredactor h5 {
+    font-size: 1.2rem;
+  }
+  .Unredactor input {
+    height: 30px;
+  }
 }

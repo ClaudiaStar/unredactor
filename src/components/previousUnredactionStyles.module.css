@@ -1,15 +1,17 @@
 .Container {
+  margin-top: 100px;
+  min-height: 100vh;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
-  align-content: center;
-  padding: 20px 0;
+  align-items: center;
+  padding: 20px 0 100px 0;
 }
 
 .ScrollBoxContainer {
-  width: 45vw;
+  max-width: 45vw;
   text-align: center;
   margin: 0 10vw;
   flex-grow: 2;
@@ -24,7 +26,6 @@
 
 .ScrollBox {
   overflow-y: scroll;
-  height: 500px;
   max-height: 400px;
   padding: 20px;
   background-color: #ffffff;
@@ -38,10 +39,55 @@
 }
 
 .ImageDiv {
-  width: 30vw;
+  max-width: 500px;
   align-self: flex-end;
+  min-height: 90vh;
 }
 
 .ImageDiv img {
-  width: 100%;
+  height: 90vh;
+}
+
+@media only screen and (max-width: 1080px) {
+  .Container {
+    position: static;
+    display: grid;
+    background-color: #ffffff;
+    grid-template-columns: 5vw 8vw 74vw 8vw 5vw;
+    grid-template-rows: 5vh 20vh 50vh 20vh 5vh;
+    align-items: center;
+  }
+  .ImageDiv {
+    grid-column: 2 / 5;
+    grid-row: 2 / 5;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+  .ImageDiv img {
+    height: 100%;
+    width: 100%;
+  }
+  .ScrollBoxContainer {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    z-index: 1;
+    margin: 0;
+    min-width: 100%;
+    width: 100%;
+  }
+  .ScrollBoxContainer strong {
+    color: #ffffff;
+    font-size: 2.0736rem;
+    text-align: center;
+  }
+  .ScrollBox {
+    height: 50vh;
+    padding: 0;
+    width: 74vw;
+  }
+  .ListItem {
+    margin: 20px;
+  }
 }

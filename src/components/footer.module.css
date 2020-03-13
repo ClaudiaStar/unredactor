@@ -1,16 +1,19 @@
 .Container {
-  height: 90vh;
+  min-height: 100vh;
   background-color: #272727;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .ContactSection {
-  width: 28vw;
+  width: 400px;
+  margin: 0 5vw;
 }
 
 .MapSection {
-  width: 28vw;
+  width: 400px;
+  margin: 0 5vw;
 }
 
 .ContactSection h6,
@@ -93,4 +96,23 @@
 .MapParagraph {
   width: 300px;
   margin: auto;
+}
+
+.SocialMedia {
+  margin: auto;
+  width: 35%;
+  display: flex;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.MapSection p {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-family: montserrat;
 }

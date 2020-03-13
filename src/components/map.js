@@ -6,11 +6,15 @@ import {
   Marker,
 } from "react-google-maps"
 
+// Import custom styles to customize the style of Google Map
+const styles = require("./GoogleMapStyles.json")
+
 function Map() {
   return (
     <GoogleMap
       defaultZoom={14}
       defaultCenter={{ lat: 45.524818, lng: -122.678032 }}
+      defaultOptions={{ styles: styles }}
     >
       <Marker position={{ lat: 45.524818, lng: -122.678032 }} />
     </GoogleMap>
@@ -23,7 +27,7 @@ const MancepsMap = () => {
   return (
     <div
       style={{
-        width: "25vw",
+        width: "350px",
         height: "40vh",
         margin: "40px auto",
       }}

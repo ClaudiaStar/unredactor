@@ -1,6 +1,11 @@
 import React from "react"
 import footerStyles from "./footer.module.css"
 import MancepsMap from "./map"
+import { FaFacebook } from "react-icons/fa"
+import { AiFillTwitterCircle } from "react-icons/ai"
+import { TiSocialLinkedinCircular } from "react-icons/ti"
+import { FaPinterest } from "react-icons/fa"
+import { IconContext } from "react-icons"
 
 const Footer = () => {
   return (
@@ -35,6 +40,45 @@ const Footer = () => {
           </h6>
         </div>
         <MancepsMap />
+        <div className={footerStyles.SocialMedia}>
+          <IconContext.Provider
+            value={{
+              color: "#ffffff",
+              className: "facebook",
+              size: "15px",
+            }}
+          >
+            <FaFacebook />
+          </IconContext.Provider>
+          <IconContext.Provider
+            value={{
+              color: "#ffffff",
+              className: "twitter",
+              size: "17px",
+            }}
+          >
+            <AiFillTwitterCircle />
+          </IconContext.Provider>
+          <IconContext.Provider
+            value={{
+              color: "#ffffff",
+              className: "linkedin",
+              size: "20px",
+            }}
+          >
+            <TiSocialLinkedinCircular />
+          </IconContext.Provider>
+          <IconContext.Provider
+            value={{
+              color: "#ffffff",
+              className: "pinterest",
+              size: "15px",
+            }}
+          >
+            <FaPinterest />
+          </IconContext.Provider>
+        </div>
+        <p>Copyright © 2019 Manceps</p>
       </div>
     </div>
   )

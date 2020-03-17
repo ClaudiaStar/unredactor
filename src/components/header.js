@@ -4,20 +4,34 @@ import headerStyles from "./headerStyles.module.css"
 
 import Logo from "../images/manceps-triangle.png"
 
-const Header = () => (
-  <header>
-    <a href="https://www.manceps.ai/">
-      <img src={Logo} alt="Manceps Logo" className={headerStyles.Logo} />
-    </a>
-    <div className={headerStyles.Burger} id="burger">
-      <div className={headerStyles.Lines}>
-        <div className={headerStyles.Line}></div>
-        <div className={headerStyles.Line}></div>
-        <div className={headerStyles.Line}></div>
+const Header = () => {
+  const handleMenuClick = () => {
+    return (
+      <div className={headerStyles.Menu}>
+        <h1>This is the menu.</h1>
       </div>
-    </div>
-  </header>
-)
+    )
+  }
+
+  return (
+    <header>
+      <a href="https://www.manceps.ai/">
+        <img src={Logo} alt="Manceps Logo" className={headerStyles.Logo} />
+      </a>
+      <div
+        className={headerStyles.Burger}
+        id="burger"
+        onClick={handleMenuClick}
+      >
+        <div className={headerStyles.Lines}>
+          <div className={headerStyles.Line}></div>
+          <div className={headerStyles.Line}></div>
+          <div className={headerStyles.Line}></div>
+        </div>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

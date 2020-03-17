@@ -32,3 +32,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
+require("dotenv").config({
+  path: `.env.${process.env.GATSBY_APP_GOOGLE_KEY}`,
+})

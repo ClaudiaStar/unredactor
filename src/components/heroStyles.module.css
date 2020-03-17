@@ -133,7 +133,7 @@
   }
   .HeroContent {
     padding-top: 15vh;
-    grid-template-columns: 100vw;
+    grid-template-columns: 95vw;
     grid-template-rows: auto 10vh;
     grid-template-areas: "unredactor" "social";
   }

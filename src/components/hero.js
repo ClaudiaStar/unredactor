@@ -15,6 +15,10 @@ const Hero = () => {
     setUnredactClicked(true)
   }
 
+  const againButtonClickHandler = () => {
+    setUnredactClicked(false)
+  }
+
   return (
     <div className={heroStyles.HeroContainer}>
       <Header />
@@ -72,7 +76,7 @@ const Hero = () => {
             <label for="share-results">Share Results</label>
             <br />
             <br />
-            <button>DO IT AGAIN</button>
+            <button onClick={againButtonClickHandler}>DO IT AGAIN</button>
           </div>
         ) : (
           <div className={heroStyles.Unredactor}>

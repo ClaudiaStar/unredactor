@@ -36,6 +36,13 @@
   background-color: #f0f0f0;
   margin-bottom: 30px;
   padding: 10px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 1.28rem;
+}
+
+.Unredacted {
+  font-weight: 600;
 }
 
 .ImageDiv {

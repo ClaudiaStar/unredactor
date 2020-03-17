@@ -58,7 +58,9 @@ const PreviousUnredactionsSection = () => {
     return (
       <div key={index + 123} className={PreviousUnredactionsStyles.ListItem}>
         <p>Input: {unredaction.input}</p>
-        <p>Unredacted: {unredaction.unredacted}</p>
+        <p className={PreviousUnredactionsStyles.Unredacted}>
+          Unredacted: {unredaction.unredacted}
+        </p>
       </div>
     )
   })

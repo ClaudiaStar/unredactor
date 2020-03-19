@@ -20,13 +20,15 @@ const Footer = () => {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
 
+  const portalId = "7324074"
+  const formId = "6aa1747b-ba12-46a8-b1b3-8b4f76ba338e"
   const submitForm = e => {
     if (e) e.preventDefault()
 
-    const portalId = "7324074"
-    const formId = "6aa1747b-ba12-46a8-b1b3-8b4f76ba338e"
     const isBrowser = typeof window !== "undefined"
     const hutk = isBrowser ? Cookies.get("hubspotutk") : null
+    console.log(hutk)
+
     const pageUri = isBrowser ? window.location.href : null
     const pageName = isBrowser ? document.title : null
     const postUrlBase =
@@ -83,7 +85,12 @@ const Footer = () => {
 
   return (
     <div className={footerStyles.Container}>
-      <form className={footerStyles.ContactSection} onSubmit={submitForm}>
+      <form
+        className={footerStyles.ContactSection}
+        data-form-id={formId}
+        data-portal-id={portalId}
+        onSubmit={submitForm}
+      >
         <h6>
           <strong>SEND US A MESSAGE</strong>
         </h6>

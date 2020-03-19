@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React, { useState } from "react"
 import fetch from "isomorphic-unfetch"
 import Cookies from "js-cookie"
 
@@ -100,6 +99,7 @@ const Footer = () => {
           name="first-name"
           value={firstname}
           onChange={e => setFirstname(e.target.value)}
+          type="text"
         />
         <br />
         <input
@@ -107,6 +107,7 @@ const Footer = () => {
           name="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
+          type="email"
         />
         <br />
         <textarea
@@ -114,9 +115,15 @@ const Footer = () => {
           name="message"
           value={message}
           onChange={e => setMessage(e.target.value)}
+          type="text"
         ></textarea>
         <br />
         <button type="submit">GET IN TOUCH</button>
+        {success ? (
+          <div style={{ color: "#ffffff" }}>
+            <h3>Thanks for your message! We will get back to you shortly.</h3>
+          </div>
+        ) : null}
       </form>
       <div className={footerStyles.MapSection}>
         <h6>

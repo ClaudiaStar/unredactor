@@ -72,8 +72,10 @@ const Hero = () => {
               Output: Beyonce is an <strong>American Singer</strong> and
               actress.
             </p>
-            <input type="radio" id="share-results" />
-            <label for="share-results">Share Results</label>
+            <label for="share-results">
+              <input type="radio" id="share-results" />
+              Share Results
+            </label>
             <br />
             <br />
             <button onClick={againButtonClickHandler}>DO IT AGAIN</button>

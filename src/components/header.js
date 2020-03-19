@@ -19,9 +19,12 @@ const Header = () => {
         <img src={Logo} alt="Manceps Logo" className={headerStyles.Logo} />
       </a>
       <div
+        role="button"
+        tabIndex="0"
         className={headerStyles.Burger}
         id="burger"
         onClick={handleMenuClick}
+        onKeyPress={handleMenuClick}
       >
         <div className={headerStyles.Lines}>
           <div className={headerStyles.Line}></div>

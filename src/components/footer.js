@@ -1,4 +1,5 @@
 import React from "react"
+
 import footerStyles from "./footer.module.css"
 import MancepsMap from "./map"
 import { FaFacebook } from "react-icons/fa"

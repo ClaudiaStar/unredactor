@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      {menuClicked ? <Menu /> : null}
+      {menuClicked ? <Menu clicked={handleMenuClick} /> : null}
       <header>
         <a href="https://www.manceps.ai/">
           <img src={Logo} alt="Manceps Logo" className={headerStyles.Logo} />

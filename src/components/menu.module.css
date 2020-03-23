@@ -56,7 +56,7 @@ a {
 
 .IndustriesMenuContainer,
 .PartnersMenuContainer {
-  display: flex;
+  display: none;
   padding: 0 40px;
   background-color: #f1f1f1;
   width: 30vw;
@@ -78,6 +78,11 @@ a {
 .IndustriesLabel p:hover,
 .PartnersLabel p:hover {
   color: #31a2dc;
+}
+
+.IndustriesLabel:hover .IndustriesMenuContainer,
+.PartnersLabel:hover .PartnersMenuContainer {
+  display: flex;
 }
 
 @media only screen and (max-width: 470px) {

@@ -5,25 +5,6 @@ import { IoMdArrowDropdown } from "react-icons/io"
 import { IconContext } from "react-icons"
 
 const Menu = props => {
-  const [industriesHovered, setIndustriesHovered] = useState(false)
-  const [partnersHovered, setPartnersHovered] = useState(false)
-
-  const onIndustriesMouseOver = () => {
-    setIndustriesHovered(true)
-  }
-
-  const onIndustriesMouseOut = () => {
-    setIndustriesHovered(false)
-  }
-
-  const onPartnersMouseOver = () => {
-    setPartnersHovered(true)
-  }
-
-  const onPartnersMouseOut = () => {
-    setPartnersHovered(false)
-  }
-
   const firstMenuItems = [
     { name: "Home", href: "https://www.manceps.ai", delay: 0.05 },
     { name: "About", href: "https://www.manceps.ai/about", delay: 0.1 },
@@ -159,10 +140,6 @@ const Menu = props => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.25, duration: 0.2 }}
           className={menuStyles.IndustriesLabel}
-          onMouseOver={onIndustriesMouseOver}
-          onFocus={onIndustriesMouseOver}
-          onMouseOut={onIndustriesMouseOut}
-          onBlur={onIndustriesMouseOut}
         >
           <p>
             Industries
@@ -172,11 +149,9 @@ const Menu = props => {
               <IoMdArrowDropdown />
             </IconContext.Provider>
           </p>
-          {industriesHovered ? (
-            <div className={menuStyles.IndustriesMenuContainer}>
-              {industriesMenuList}
-            </div>
-          ) : null}
+          <div className={menuStyles.IndustriesMenuContainer}>
+            {industriesMenuList}
+          </div>
         </motion.li>
 
         <motion.li
@@ -187,10 +162,6 @@ const Menu = props => {
             duration: 0.2,
           }}
           className={menuStyles.PartnersLabel}
-          onMouseOver={onPartnersMouseOver}
-          onFocus={onPartnersMouseOver}
-          onMouseOut={onPartnersMouseOut}
-          onBlur={onPartnersMouseOut}
         >
           <p>
             Partners
@@ -200,12 +171,9 @@ const Menu = props => {
               <IoMdArrowDropdown />
             </IconContext.Provider>
           </p>
-
-          {partnersHovered ? (
-            <div className={menuStyles.PartnersMenuContainer}>
-              {partnersMenuList}
-            </div>
-          ) : null}
+          <div className={menuStyles.PartnersMenuContainer}>
+            {partnersMenuList}
+          </div>
         </motion.li>
         {thirdMenuList}
       </ul>

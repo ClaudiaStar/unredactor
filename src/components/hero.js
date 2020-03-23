@@ -10,13 +10,81 @@ import { IconContext } from "react-icons"
 
 const Hero = () => {
   const [unredactClicked, setUnredactClicked] = useState(false)
+  const [revealClicked, setRevealClicked] = useState(false)
+  const [homeClicked, setHomeClicked] = useState(true)
 
   const unredactButtonClickHandler = () => {
     setUnredactClicked(true)
+    setHomeClicked(false)
+  }
+
+  const emailButtonClickHandler = () => {
+    setUnredactClicked(false)
+    setRevealClicked(true)
   }
 
   const againButtonClickHandler = () => {
-    setUnredactClicked(false)
+    setRevealClicked(false)
+    setHomeClicked(true)
+  }
+
+  let unredactor
+
+  if (homeClicked) {
+    unredactor = (
+      <div className={heroStyles.Unredactor}>
+        <div>
+          <h1>
+            <strong>WHAT WOULD YOU LIKE TO UNREDACT?</strong>
+          </h1>
+          <h5>
+            Type in your redacted paragraph and use the word "unk" for hidden
+            words.
+          </h5>
+          <input type="text" />
+          <br />
+          <button onClick={unredactButtonClickHandler}>UNREDACT</button>
+          <p style={{ paddingTop: "8px" }}>Here's an example:</p>
+          <p style={{ paddingTop: "15px" }}>
+            Beyonce is an <strong>unk unk</strong> and actress.
+          </p>
+          <p>
+            Output: Beyonce is an
+            <strong> American Singer</strong> and actress.
+          </p>
+        </div>
+      </div>
+    )
+  }
+  if (unredactClicked) {
+    unredactor = (
+      <div className={heroStyles.Unredacted}>
+        <h5>Enter your email address below to reveal results:</h5>
+        <input type="text" />
+        <br />
+        <button onClick={emailButtonClickHandler}>SEE RESULTS</button>
+      </div>
+    )
+  }
+  if (revealClicked) {
+    unredactor = (
+      <div className={heroStyles.Unredacted}>
+        <p className={heroStyles.InputText}>
+          Your input: Beyonce is an <strong>unk unk</strong> and actress.
+        </p>
+        <p className={heroStyles.UnredactedText}>
+          Output: Beyonce is an <strong>American Singer</strong> and actress.
+        </p>
+        <br />
+        <label for="share-results">
+          <input type="radio" id="share-results" />
+          Share Results
+        </label>
+        <br />
+        <br />
+        <button onClick={againButtonClickHandler}>DO IT AGAIN</button>
+      </div>
+    )
   }
 
   return (
@@ -62,48 +130,7 @@ const Hero = () => {
             <FaPinterest />
           </IconContext.Provider>
         </div>
-
-        {unredactClicked ? (
-          <div className={heroStyles.Unredacted}>
-            <p className={heroStyles.InputText}>
-              Your input: Beyonce is an <strong>unk unk</strong> and actress.
-            </p>
-            <p className={heroStyles.UnredactedText}>
-              Output: Beyonce is an <strong>American Singer</strong> and
-              actress.
-            </p>
-            <label for="share-results">
-              <input type="radio" id="share-results" />
-              Share Results
-            </label>
-            <br />
-            <br />
-            <button onClick={againButtonClickHandler}>DO IT AGAIN</button>
-          </div>
-        ) : (
-          <div className={heroStyles.Unredactor}>
-            <div>
-              <h1>
-                <strong>WHAT WOULD YOU LIKE TO UNREDACT?</strong>
-              </h1>
-              <h5>
-                Type in your redacted paragraph and use the word "unk" for
-                hidden words.
-              </h5>
-              <input type="text" />
-              <br />
-              <button onClick={unredactButtonClickHandler}>UNREDACT</button>
-              <p style={{ paddingTop: "8px" }}>Here's an example:</p>
-              <p style={{ paddingTop: "15px" }}>
-                Beyonce is an <strong>unk unk</strong> and actress.
-              </p>
-              <p>
-                Output: Beyonce is an
-                <strong> American Singer</strong> and actress.
-              </p>
-            </div>
-          </div>
-        )}
+        {unredactor}
       </div>
     </div>
   )

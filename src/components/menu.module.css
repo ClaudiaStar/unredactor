@@ -36,11 +36,11 @@
 }
 
 ul {
-  padding: 10vh 0;
+  padding: 7vh 0;
 }
 
 li {
-  height: 10vh;
+  margin: 5vh;
   list-style-type: none;
   text-align: center;
   font-size: 21px;
@@ -52,4 +52,37 @@ li {
 a {
   text-decoration: none;
   color: #000000;
+}
+
+.IndustriesMenuContainer,
+.PartnersMenuContainer {
+  display: flex;
+  padding: 0 40px;
+  background-color: #f1f1f1;
+  width: 30vw;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin: 9px auto 0 auto;
+  font-size: 15px;
+  font-weight: 400;
+  z-index: 2000;
+}
+
+.IndustriesMenuContainer a,
+.PartnersMenuContainer a {
+  padding: 15px 0;
+}
+
+.IndustriesLabel p:hover,
+.PartnersLabel p:hover {
+  color: #31a2dc;
+}
+
+@media only screen and (max-width: 470px) {
+  .IndustriesMenuContainer,
+  .PartnersMenuContainer {
+    width: 50vw;
+  }
 }

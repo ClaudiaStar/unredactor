@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import menuStyles from "./menu.module.css"
 import { motion } from "framer-motion"
 import { IoMdArrowDropdown } from "react-icons/io"
@@ -130,7 +130,12 @@ const Menu = props => {
 
   return (
     <div className={menuStyles.Container}>
-      <div className={menuStyles.Exit} onClick={props.clicked}>
+      <div
+        className={menuStyles.Exit}
+        onClick={props.clicked}
+        onKeyDown={props.clicked}
+        role="button"
+      >
         x
       </div>
       <ul>

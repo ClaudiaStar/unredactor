@@ -72,11 +72,11 @@ const Hero = () => {
         <p className={heroStyles.InputText}>
           Your input: Beyonce is an <strong>unk unk</strong> and actress.
         </p>
-        <p className={heroStyles.UnredactedText}>
+        <h5 className={heroStyles.UnredactedText}>
           Output: Beyonce is an <strong>American Singer</strong> and actress.
-        </p>
+        </h5>
         <br />
-        <label for="share-results">
+        <label htmlFor="share-results">
           <input type="radio" id="share-results" />
           Share Results
         </label>

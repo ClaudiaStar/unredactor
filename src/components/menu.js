@@ -129,7 +129,12 @@ const Menu = props => {
   })
 
   return (
-    <div className={menuStyles.Container}>
+    <motion.div
+      className={menuStyles.Container}
+      initial={{ x: "100vw" }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.2 }}
+    >
       <div
         className={menuStyles.Exit}
         onClick={props.clicked}
@@ -182,7 +187,7 @@ const Menu = props => {
         </motion.li>
         {thirdMenuList}
       </ul>
-    </div>
+    </motion.div>
   )
 }
 

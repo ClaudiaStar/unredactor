@@ -10,16 +10,6 @@
   top: 0;
   left: 0;
   z-index: 2000;
-  animation: slide 0.3s;
-}
-
-@keyframes slide {
-  0% {
-    left: 100vw;
-  }
-  100% {
-    left: 0;
-  }
 }
 
 .Exit {

@@ -27,7 +27,7 @@ const MancepsMap = () => {
   return (
     <div
       style={{
-        width: "350px",
+        width: "320px",
         height: "40vh",
         margin: "40px auto",
       }}

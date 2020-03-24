@@ -100,21 +100,54 @@
   max-width: 90vw;
 }
 
-.Unredacted {
-  max-width: 80%;
+input[type="checkbox"] {
+  visibility: hidden;
 }
 
-.InputText {
-  text-align: left;
-  font-weight: normal;
-  font-size: 1.28rem;
-  margin: 10px 0;
+.ShareCheckbox {
+  position: relative;
+  display: inline-block;
 }
 
-.UnredactedText {
-  font-size: 2rem;
-  text-align: left;
-  font-weight: normal;
+.ShareCheckbox label {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+.ShareCheckbox label:after {
+  opacity: 0.2;
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  background: transparent;
+  top: 6px;
+  left: 7px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
+
+.ShareCheckbox label:hover::after {
+  opacity: 0.5;
+}
+
+.ShareCheckbox input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.ShareLabel {
+  display: inline-block;
+  height: 30px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 769px) {
@@ -134,7 +167,7 @@
   .HeroContent {
     padding-top: 15vh;
     grid-template-columns: 95vw;
-    grid-template-rows: auto 10vh;
+    grid-template-rows: 50vh 10vh;
     grid-template-areas: "unredactor" "social";
   }
   .HeroContainer input[type="text"] {
@@ -148,18 +181,48 @@
     justify-content: space-between;
     justify-self: center;
     align-items: center;
-    align-self: flex-start;
+    align-self: flex-end;
   }
 }
 
 @media only screen and (max-width: 470px) {
   .HeroContent {
-    padding-top: 8vh;
+    padding-top: 12vh;
+    grid-template-rows: 60vh 15vh;
   }
   .HeroContainer h5 {
     font-size: 1.2rem;
   }
   .HeroContainer input[type="text"] {
     height: 30px;
+  }
+  .Unredactor > p {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  .HeroContent {
+    padding-top: 15vh;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  .HeroContent {
+    padding-top: 15vh;
+    grid-template-rows: 60vh 14vh;
+  }
+  .HeroContainer h1 {
+    font-size: 1.5rem;
+    margin: 10px 0px;
+    width: 90%;
+  }
+  .HeroContainer h5 {
+    width: 90%;
+    font-size: 1rem;
+    margin: 10px 0px;
+  }
+  .HeroContainer p {
+    padding-top: 0px !important;
   }
 }

@@ -177,11 +177,13 @@ input[type="checkbox"] {
   .SocialMedia {
     height: 60px;
     width: 220px;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     justify-self: center;
     align-items: center;
     align-self: flex-end;
+    align-content: space-around;
+    margin-right: 25px;
   }
 }
 

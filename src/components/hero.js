@@ -85,12 +85,6 @@ const Hero = () => {
         Output: Beyonce is an <strong>American Singer</strong> and actress.
       </h5>
       <br />
-      <h3 className={heroStyles.ShareLabel}>Share results?</h3>
-      <div className={heroStyles.ShareCheckbox}>
-        <input type="checkbox" id="share-results" value="share" name="" />
-        <label htmlFor="share-results"></label>
-      </div>
-      <br />
       <br />
       <button onClick={againButtonClickHandler}>DO IT AGAIN</button>
     </motion.div>

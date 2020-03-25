@@ -21,10 +21,43 @@
   margin-left: 13vw;
 }
 
+.Container a {
+  padding: 15px 30px;
+  margin-left: 13vw;
+  box-sizing: border-box;
+  min-width: 170px;
+  height: 50px;
+  font-size: 12px;
+  line-height: 44px;
+  letter-spacing: 1px;
+  text-indent: 1px;
+  color: #fff;
+  font-weight: 400;
+  background-color: #000000;
+  border: solid #fff;
+  border-width: 3px;
+  border-radius: 0 0 0 0;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  outline: 0 !important;
+}
+
+.Container a:hover {
+  background-color: #ffffff;
+  border: solid #000000;
+  color: #000000;
+}
+
 @media only screen and (max-width: 1000px) {
   .Container h3 {
     width: 90vw;
     margin: 0 5vw;
+  }
+  .Container a {
+    margin: 30px 5vw;
   }
 }
 

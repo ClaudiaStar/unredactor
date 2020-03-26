@@ -11,7 +11,7 @@ import CssHeroImage from "../components/cssHeroImage"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Unredactor" />
     <Head title="Unredactor" />
     <Hero />
     <PreviousUnredactionsSection />

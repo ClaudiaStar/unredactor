@@ -32,8 +32,8 @@ const Hero = () => {
   let unredactor = (
     <motion.div
       className={heroStyles.Unredactor}
-      initial={{ y: 400 }}
-      animate={{ y: 0 }}
+      initial={{ y: 400, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
     >
       <div>
         <h1>

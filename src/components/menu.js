@@ -140,6 +140,7 @@ const Menu = props => {
         onClick={props.clicked}
         onKeyDown={props.clicked}
         role="button"
+        tabIndex={0}
       >
         x
       </div>

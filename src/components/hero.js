@@ -67,7 +67,7 @@ const Hero = () => {
             <IconContext.Provider
               value={{
                 color: "#4267B2",
-                className: "facebook",
+                className: heroStyles.SocialIcon,
                 size: "40px",
               }}
             >
@@ -82,7 +82,7 @@ const Hero = () => {
             <IconContext.Provider
               value={{
                 color: "#1DA1F2",
-                className: "twitter",
+                className: heroStyles.SocialIcon,
                 size: "43px",
               }}
             >
@@ -97,7 +97,7 @@ const Hero = () => {
             <IconContext.Provider
               value={{
                 color: "#0077B5",
-                className: "linkedin",
+                className: heroStyles.SocialIcon,
                 size: "53px",
               }}
             >
@@ -112,7 +112,7 @@ const Hero = () => {
             <IconContext.Provider
               value={{
                 color: "#E60023",
-                className: "pinterest",
+                className: heroStyles.SocialIcon,
                 size: "40px",
               }}
             >

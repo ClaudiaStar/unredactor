@@ -28,6 +28,10 @@
   margin-right: 50px;
 }
 
+.SocialIcon:hover {
+  opacity: 0.7;
+}
+
 .Unredactor {
   grid-area: unredactor;
 }

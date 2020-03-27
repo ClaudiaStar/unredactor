@@ -165,7 +165,7 @@ const Footer = () => {
             <IconContext.Provider
               value={{
                 color: "#ffffff",
-                className: "facebook",
+                className: footerStyles.SocialIcon,
                 size: "15px",
               }}
             >
@@ -180,7 +180,7 @@ const Footer = () => {
             <IconContext.Provider
               value={{
                 color: "#ffffff",
-                className: "twitter",
+                className: footerStyles.SocialIcon,
                 size: "17px",
               }}
             >
@@ -195,7 +195,7 @@ const Footer = () => {
             <IconContext.Provider
               value={{
                 color: "#ffffff",
-                className: "linkedin",
+                className: footerStyles.SocialIcon,
                 size: "20px",
               }}
             >
@@ -210,7 +210,7 @@ const Footer = () => {
             <IconContext.Provider
               value={{
                 color: "#ffffff",
-                className: "github",
+                className: footerStyles.SocialIcon,
                 size: "15px",
               }}
             >

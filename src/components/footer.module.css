@@ -115,3 +115,7 @@
   letter-spacing: 1px;
   font-family: montserrat;
 }
+
+.SocialIcon:hover {
+  opacity: 0.7;
+}

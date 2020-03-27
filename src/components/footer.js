@@ -18,11 +18,12 @@ const Footer = () => {
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false)
   const [firstname, setFirstname] = useState("")
+  const [lastname, setLastname] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
 
-  const portalId = "7324074"
-  const formId = "6aa1747b-ba12-46a8-b1b3-8b4f76ba338e"
+  const portalId = "6531460"
+  const formId = "bc25aaa4-a724-4927-80a0-79be7131f28e"
   const submitForm = e => {
     if (e) e.preventDefault()
 
@@ -44,6 +45,10 @@ const Footer = () => {
         {
           name: "firstname",
           value: firstname,
+        },
+        {
+          name: "lastname",
+          value: lastname,
         },
         {
           name: "email",
@@ -74,6 +79,7 @@ const Footer = () => {
         setError(false)
         setLoading(false)
         setFirstname("")
+        setLastname("")
         setEmail("")
         setMessage("")
       })
@@ -101,6 +107,14 @@ const Footer = () => {
           name="first-name"
           value={firstname}
           onChange={e => setFirstname(e.target.value)}
+          type="text"
+        />
+        <br />
+        <input
+          placeholder="Last Name"
+          name="last-name"
+          value={lastname}
+          onChange={e => setLastname(e.target.value)}
           type="text"
         />
         <br />

@@ -7,7 +7,7 @@ import MancepsMap from "./map"
 import { FaFacebook } from "react-icons/fa"
 import { AiFillTwitterCircle } from "react-icons/ai"
 import { TiSocialLinkedinCircular } from "react-icons/ti"
-import { FaPinterest } from "react-icons/fa"
+import { IoLogoGithub } from "react-icons/io"
 import { IconContext } from "react-icons"
 
 const Footer = () => {
@@ -157,42 +157,66 @@ const Footer = () => {
         </div>
         <MancepsMap />
         <div className={footerStyles.SocialMedia}>
-          <IconContext.Provider
-            value={{
-              color: "#ffffff",
-              className: "facebook",
-              size: "15px",
-            }}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/manceps?utm_source=Projects&utm_medium=C2A&utm_campaign=Inbound&utm_content=Unredactor"
           >
-            <FaFacebook />
-          </IconContext.Provider>
-          <IconContext.Provider
-            value={{
-              color: "#ffffff",
-              className: "twitter",
-              size: "17px",
-            }}
+            <IconContext.Provider
+              value={{
+                color: "#ffffff",
+                className: "facebook",
+                size: "15px",
+              }}
+            >
+              <FaFacebook />
+            </IconContext.Provider>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/MancepsAI?utm_source=Projects&utm_medium=C2A&utm_campaign=Inbound&utm_content=Unredactor"
           >
-            <AiFillTwitterCircle />
-          </IconContext.Provider>
-          <IconContext.Provider
-            value={{
-              color: "#ffffff",
-              className: "linkedin",
-              size: "20px",
-            }}
+            <IconContext.Provider
+              value={{
+                color: "#ffffff",
+                className: "twitter",
+                size: "17px",
+              }}
+            >
+              <AiFillTwitterCircle />
+            </IconContext.Provider>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/company/2402277/admin/?utm_source=Projects&utm_medium=C2A&utm_campaign=Inbound&utm_content=Unredactor"
           >
-            <TiSocialLinkedinCircular />
-          </IconContext.Provider>
-          <IconContext.Provider
-            value={{
-              color: "#ffffff",
-              className: "pinterest",
-              size: "15px",
-            }}
+            <IconContext.Provider
+              value={{
+                color: "#ffffff",
+                className: "linkedin",
+                size: "20px",
+              }}
+            >
+              <TiSocialLinkedinCircular />
+            </IconContext.Provider>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/manceps?utm_source=Projects&utm_medium=C2A&utm_campaign=Inbound&utm_content=Unredactor"
           >
-            <FaPinterest />
-          </IconContext.Provider>
+            <IconContext.Provider
+              value={{
+                color: "#ffffff",
+                className: "github",
+                size: "15px",
+              }}
+            >
+              <IoLogoGithub />
+            </IconContext.Provider>
+          </a>
         </div>
         <p>Copyright © 2019 Manceps</p>
       </div>

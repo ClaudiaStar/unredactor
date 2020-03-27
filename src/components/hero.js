@@ -59,42 +59,66 @@ const Hero = () => {
       <CssHeroImage />
       <div className={heroStyles.HeroContent}>
         <div className={heroStyles.SocialMedia}>
-          <IconContext.Provider
-            value={{
-              color: "#4267B2",
-              className: "facebook",
-              size: "40px",
-            }}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.manceps.com%2Fapps%2Funredactor&title="
           >
-            <FaFacebook />
-          </IconContext.Provider>
-          <IconContext.Provider
-            value={{
-              color: "#1DA1F2",
-              className: "twitter",
-              size: "43px",
-            }}
+            <IconContext.Provider
+              value={{
+                color: "#4267B2",
+                className: "facebook",
+                size: "40px",
+              }}
+            >
+              <FaFacebook />
+            </IconContext.Provider>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/intent/tweet?&url=https://www.manceps.com/apps/unredactor&text="
           >
-            <AiFillTwitterCircle />
-          </IconContext.Provider>
-          <IconContext.Provider
-            value={{
-              color: "#0077B5",
-              className: "linkedin",
-              size: "53px",
-            }}
+            <IconContext.Provider
+              value={{
+                color: "#1DA1F2",
+                className: "twitter",
+                size: "43px",
+              }}
+            >
+              <AiFillTwitterCircle />
+            </IconContext.Provider>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/shareArticle/?mini=true&url=https://www.manceps.com/apps/unredactor&title=&source=Ucraft"
           >
-            <TiSocialLinkedinCircular />
-          </IconContext.Provider>
-          <IconContext.Provider
-            value={{
-              color: "#E60023",
-              className: "pinterest",
-              size: "40px",
-            }}
+            <IconContext.Provider
+              value={{
+                color: "#0077B5",
+                className: "linkedin",
+                size: "53px",
+              }}
+            >
+              <TiSocialLinkedinCircular />
+            </IconContext.Provider>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.pinterest.com/pin/create/button/?url=https://www.manceps.com/apps/unredactor&description="
           >
-            <FaPinterest />
-          </IconContext.Provider>
+            <IconContext.Provider
+              value={{
+                color: "#E60023",
+                className: "pinterest",
+                size: "40px",
+              }}
+            >
+              <FaPinterest />
+            </IconContext.Provider>
+          </a>
         </div>
         {homeClicked ? unredactor : null}
         {unredactClicked ? (

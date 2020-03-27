@@ -163,6 +163,8 @@ const Menu = props => {
           transition={{ delay: 0.25, duration: 0.2 }}
           className={menuStyles.IndustriesLabel}
           onClick={industriesClickedHandler}
+          onMouseOver={industriesClickedHandler}
+          onMouseOut={industriesClickedHandler}
         >
           <p>
             Industries
@@ -188,6 +190,8 @@ const Menu = props => {
           }}
           className={menuStyles.PartnersLabel}
           onClick={partnersClickedHandler}
+          onMouseOver={partnersClickedHandler}
+          onMouseOut={partnersClickedHandler}
         >
           <p>
             Partners

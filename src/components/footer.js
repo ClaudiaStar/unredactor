@@ -29,8 +29,6 @@ const Footer = () => {
 
     const isBrowser = typeof window !== "undefined"
     const hutk = isBrowser ? Cookies.get("hubspotutk") : null
-    console.log(hutk)
-
     const pageUri = isBrowser ? window.location.href : null
     const pageName = isBrowser ? document.title : null
     const postUrlBase =

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Header from "./header"
-import EmailCapture from "./emailCapture"
+import Reveal from "./reveal"
 import CssHeroImage from "./cssHeroImage"
 import heroStyles from "./heroStyles.module.css"
 import { FaFacebook } from "react-icons/fa"
@@ -12,7 +12,6 @@ import { motion } from "framer-motion"
 
 const Hero = () => {
   const [unredactClicked, setUnredactClicked] = useState(false)
-  const [revealClicked, setRevealClicked] = useState(false)
   const [homeClicked, setHomeClicked] = useState(true)
 
   const unredactButtonClickHandler = () => {
@@ -20,13 +19,8 @@ const Hero = () => {
     setHomeClicked(false)
   }
 
-  const emailButtonClickHandler = () => {
-    setUnredactClicked(false)
-    setRevealClicked(true)
-  }
-
   const againButtonClickHandler = () => {
-    setRevealClicked(false)
+    setUnredactClicked(false)
     setHomeClicked(true)
   }
 
@@ -56,27 +50,6 @@ const Hero = () => {
           <strong> American Singer</strong> and actress.
         </p>
       </div>
-    </motion.div>
-  )
-
-  let email = <EmailCapture clicked={emailButtonClickHandler} />
-
-  let reveal = (
-    <motion.div
-      className={heroStyles.Unredactor}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 2 }}
-    >
-      <p className={heroStyles.InputText}>
-        Your input: Beyonce is an <strong>unk unk</strong> and actress.
-      </p>
-      <h5 className={heroStyles.UnredactedText}>
-        Output: Beyonce is an <strong>American Singer</strong> and actress.
-      </h5>
-      <br />
-      <br />
-      <button onClick={againButtonClickHandler}>DO IT AGAIN</button>
     </motion.div>
   )
 
@@ -124,8 +97,9 @@ const Hero = () => {
           </IconContext.Provider>
         </div>
         {homeClicked ? unredactor : null}
-        {unredactClicked ? email : null}
-        {revealClicked ? reveal : null}
+        {unredactClicked ? (
+          <Reveal againButtonClicked={againButtonClickHandler} />
+        ) : null}
       </div>
     </div>
   )

@@ -1,10 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 import menuStyles from "./menu.module.css"
 import { motion } from "framer-motion"
 import { IoMdArrowDropdown } from "react-icons/io"
 import { IconContext } from "react-icons"
 
 const Menu = props => {
+  const [industriesClicked, setIndustriesClicked] = useState(false)
+  const [partnersClicked, setPartnersClicked] = useState(false)
+
+  const industriesClickedHandler = () => {
+    setIndustriesClicked(!industriesClicked)
+  }
+
+  const partnersClickedHandler = () => {
+    setPartnersClicked(!partnersClicked)
+  }
+
   const firstMenuItems = [
     { name: "Home", href: "https://www.manceps.ai", delay: 0.05 },
     { name: "About", href: "https://www.manceps.ai/about", delay: 0.1 },
@@ -151,6 +162,7 @@ const Menu = props => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.25, duration: 0.2 }}
           className={menuStyles.IndustriesLabel}
+          onClick={industriesClickedHandler}
         >
           <p>
             Industries
@@ -160,9 +172,11 @@ const Menu = props => {
               <IoMdArrowDropdown />
             </IconContext.Provider>
           </p>
-          <div className={menuStyles.IndustriesMenuContainer}>
-            {industriesMenuList}
-          </div>
+          {industriesClicked ? (
+            <div className={menuStyles.IndustriesMenuContainer}>
+              {industriesMenuList}
+            </div>
+          ) : null}
         </motion.li>
 
         <motion.li
@@ -173,6 +187,7 @@ const Menu = props => {
             duration: 0.2,
           }}
           className={menuStyles.PartnersLabel}
+          onClick={partnersClickedHandler}
         >
           <p>
             Partners
@@ -182,9 +197,11 @@ const Menu = props => {
               <IoMdArrowDropdown />
             </IconContext.Provider>
           </p>
-          <div className={menuStyles.PartnersMenuContainer}>
-            {partnersMenuList}
-          </div>
+          {partnersClicked ? (
+            <div className={menuStyles.PartnersMenuContainer}>
+              {partnersMenuList}
+            </div>
+          ) : null}
         </motion.li>
         {thirdMenuList}
       </ul>

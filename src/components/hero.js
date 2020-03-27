@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Header from "./header"
+import EmailCapture from "./emailCapture"
 import CssHeroImage from "./cssHeroImage"
 import heroStyles from "./heroStyles.module.css"
 import { FaFacebook } from "react-icons/fa"
@@ -58,18 +59,7 @@ const Hero = () => {
     </motion.div>
   )
 
-  let email = (
-    <motion.div
-      className={heroStyles.Unredactor}
-      initial={{ x: 400 }}
-      animate={{ x: 0 }}
-    >
-      <h5>Enter your email address below to reveal results:</h5>
-      <input type="text" />
-      <br />
-      <button onClick={emailButtonClickHandler}>SEE RESULTS</button>
-    </motion.div>
-  )
+  let email = <EmailCapture clicked={emailButtonClickHandler} />
 
   let reveal = (
     <motion.div

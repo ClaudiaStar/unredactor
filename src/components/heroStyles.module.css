@@ -49,8 +49,8 @@
   letter-spacing: 1px;
 }
 
-.HeroContainer input[type="text"] {
-  width: 65%;
+.HeroContainer input {
+  width: 350px;
   font-size: 14px;
   color: #353535;
   border: solid #ddd;
@@ -120,7 +120,7 @@
     grid-template-rows: 50vh 10vh;
     grid-template-areas: "unredactor" "social";
   }
-  .HeroContainer input[type="text"] {
+  .HeroContainer {
     width: 90vw;
     height: 80px;
   }
@@ -153,9 +153,18 @@
   }
 }
 
+@media only screen and (max-width: 376px) {
+  .Unredactor input {
+    width: 320px;
+  }
+}
+
 @media only screen and (max-width: 361px) {
   .HeroContent {
     padding-top: 15vh;
+  }
+  .Unredactor input {
+    width: 280px;
   }
 }
 

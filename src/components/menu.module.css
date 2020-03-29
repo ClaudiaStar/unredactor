@@ -69,6 +69,11 @@ a {
   font-weight: 400;
 }
 
+.IndustriesMenuContainer.Opened,
+.PartnersMenuContainer.Opened {
+  display: flex;
+}
+
 .IndustriesMenuContainer a,
 .PartnersMenuContainer a {
   padding: 15px 0;
@@ -79,12 +84,12 @@ a {
   color: #31a2dc;
 }
 
-.IndustriesLabel:hover .IndustriesMenuContainer,
+/* .IndustriesLabel:hover .IndustriesMenuContainer,
 .IndustriesLabel:active .IndustriesMenuContainer,
 .PartnersLabel:hover .PartnersMenuContainer,
 .PartnersLabel:active .PartnersMenuContainer {
   display: flex;
-}
+} */
 
 @media only screen and (max-width: 470px) {
   .IndustriesMenuContainer,

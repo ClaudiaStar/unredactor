@@ -5,6 +5,16 @@ import { IoMdArrowDropdown } from "react-icons/io"
 import { IconContext } from "react-icons"
 
 const Menu = props => {
+  const toggleIndustriesMenuDisplay = () => {
+    let industriesMenuList = document.getElementById("industries-menu")
+    industriesMenuList.classList.toggle(menuStyles.Opened)
+  }
+
+  const togglePartnersMenuDisplay = () => {
+    let partnersMenuList = document.getElementById("partners-menu")
+    partnersMenuList.classList.toggle(menuStyles.Opened)
+  }
+
   const firstMenuItems = [
     { name: "Home", href: "https://www.manceps.ai", delay: 0.05 },
     { name: "About", href: "https://www.manceps.ai/about", delay: 0.1 },
@@ -136,14 +146,20 @@ const Menu = props => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.25, duration: 0.2 }}
         >
-          <div className={menuStyles.IndustriesLabel}>
+          <div
+            className={menuStyles.IndustriesLabel}
+            onClick={toggleIndustriesMenuDisplay}
+          >
             Industries
             <IconContext.Provider
               value={{ style: { verticalAlign: "middle" } }}
             >
               <IoMdArrowDropdown />
             </IconContext.Provider>
-            <div className={menuStyles.IndustriesMenuContainer}>
+            <div
+              className={menuStyles.IndustriesMenuContainer}
+              id="industries-menu"
+            >
               {industriesMenuList}
             </div>
           </div>
@@ -156,14 +172,20 @@ const Menu = props => {
             duration: 0.2,
           }}
         >
-          <div className={menuStyles.PartnersLabel}>
+          <div
+            className={menuStyles.PartnersLabel}
+            onClick={togglePartnersMenuDisplay}
+          >
             Partners
             <IconContext.Provider
               value={{ style: { verticalAlign: "middle" } }}
             >
               <IoMdArrowDropdown />
             </IconContext.Provider>
-            <div className={menuStyles.PartnersMenuContainer}>
+            <div
+              className={menuStyles.PartnersMenuContainer}
+              id="partners-menu"
+            >
               {partnersMenuList}
             </div>
           </div>

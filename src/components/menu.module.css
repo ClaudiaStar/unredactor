@@ -84,13 +84,6 @@ a {
   color: #31a2dc;
 }
 
-/* .IndustriesLabel:hover .IndustriesMenuContainer,
-.IndustriesLabel:active .IndustriesMenuContainer,
-.PartnersLabel:hover .PartnersMenuContainer,
-.PartnersLabel:active .PartnersMenuContainer {
-  display: flex;
-} */
-
 @media only screen and (max-width: 470px) {
   .IndustriesMenuContainer,
   .PartnersMenuContainer {

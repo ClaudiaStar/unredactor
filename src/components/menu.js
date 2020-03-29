@@ -135,18 +135,17 @@ const Menu = props => {
           initial={{ x: 200 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.25, duration: 0.2 }}
-          className={menuStyles.IndustriesLabel}
         >
-          <div>
+          <div className={menuStyles.IndustriesLabel}>
             Industries
             <IconContext.Provider
               value={{ style: { verticalAlign: "middle" } }}
             >
               <IoMdArrowDropdown />
             </IconContext.Provider>
-          </div>
-          <div className={menuStyles.IndustriesMenuContainer}>
-            {industriesMenuList}
+            <div className={menuStyles.IndustriesMenuContainer}>
+              {industriesMenuList}
+            </div>
           </div>
         </motion.li>
         <motion.li
@@ -156,18 +155,17 @@ const Menu = props => {
             delay: 0.3,
             duration: 0.2,
           }}
-          className={menuStyles.PartnersLabel}
         >
-          <div>
+          <div className={menuStyles.PartnersLabel}>
             Partners
             <IconContext.Provider
               value={{ style: { verticalAlign: "middle" } }}
             >
               <IoMdArrowDropdown />
             </IconContext.Provider>
-          </div>
-          <div className={menuStyles.PartnersMenuContainer}>
-            {partnersMenuList}
+            <div className={menuStyles.PartnersMenuContainer}>
+              {partnersMenuList}
+            </div>
           </div>
         </motion.li>
         {thirdMenuList}

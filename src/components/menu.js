@@ -149,6 +149,8 @@ const Menu = props => {
           <div
             className={menuStyles.IndustriesLabel}
             onClick={toggleIndustriesMenuDisplay}
+            onMouseEnter={toggleIndustriesMenuDisplay}
+            onMouseLeave={toggleIndustriesMenuDisplay}
           >
             Industries
             <IconContext.Provider
@@ -175,6 +177,8 @@ const Menu = props => {
           <div
             className={menuStyles.PartnersLabel}
             onClick={togglePartnersMenuDisplay}
+            onMouseEnter={togglePartnersMenuDisplay}
+            onMouseLeave={togglePartnersMenuDisplay}
           >
             Partners
             <IconContext.Provider

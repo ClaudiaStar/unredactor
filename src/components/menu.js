@@ -152,14 +152,14 @@ const Menu = props => {
           transition={{ delay: 0.25, duration: 0.2 }}
           className={menuStyles.IndustriesLabel}
         >
-          <p>
+          <div>
             Industries
             <IconContext.Provider
               value={{ style: { verticalAlign: "middle" } }}
             >
               <IoMdArrowDropdown />
             </IconContext.Provider>
-          </p>
+          </div>
           <div className={menuStyles.IndustriesMenuContainer}>
             {industriesMenuList}
           </div>
@@ -174,14 +174,14 @@ const Menu = props => {
           }}
           className={menuStyles.PartnersLabel}
         >
-          <p>
+          <div>
             Partners
             <IconContext.Provider
               value={{ style: { verticalAlign: "middle" } }}
             >
               <IoMdArrowDropdown />
             </IconContext.Provider>
-          </p>
+          </div>
           <div className={menuStyles.PartnersMenuContainer}>
             {partnersMenuList}
           </div>

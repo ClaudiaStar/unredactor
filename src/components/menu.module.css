@@ -29,11 +29,16 @@
 }
 
 ul {
-  padding: 7vh 0;
+  padding: 10vh 0;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: space-around;
+  width: 100vw;
+  transform: translate(0, -70px);
 }
 
 li {
-  margin: 5vh;
   list-style-type: none;
   text-align: center;
   font-size: 21px;

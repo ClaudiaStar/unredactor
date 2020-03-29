@@ -36,6 +36,7 @@ ul {
   justify-content: space-around;
   width: 100vw;
   transform: translate(0, -70px);
+  align-items: center;
 }
 
 li {
@@ -45,6 +46,7 @@ li {
   font-weight: 600;
   cursor: pointer;
   opacity: 0;
+  width: fit-content;
 }
 
 a {

@@ -64,36 +64,26 @@ const Menu = props => {
     {
       name: "Finance and Banking",
       href: "https://www.manceps.com/finance-and-banking",
-      delay: 0.05,
     },
     {
       name: "Healthcare",
       href: "https://www.manceps.com/healthcare",
-      delay: 0.1,
     },
     {
       name: "Manufacturing",
       href: "https://www.manceps.com/manufacturing",
-      delay: 0.15,
     },
     {
       name: "Product Design And Development",
       href: "https://www.manceps.com/product-design-and-development",
-      delay: 0.2,
     },
-    { name: "Retail", href: "https://www.manceps.com/retail", delay: 0.25 },
+    { name: "Retail", href: "https://www.manceps.com/retail" },
   ]
 
   const industriesMenuList = industriesMenuItems.map(
     (industriesMenuItem, index) => {
       return (
-        <motion.a
-          href={industriesMenuItem.href}
-          key={index}
-          initial={{ opacity: 0, x: 200 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: industriesMenuItem.delay, duration: 0.2 }}
-        >
+        <motion.a href={industriesMenuItem.href} key={index}>
           {industriesMenuItem.name}
         </motion.a>
       )
@@ -104,12 +94,10 @@ const Menu = props => {
     {
       name: "Google",
       href: "https://www.manceps.com/partners/google",
-      delay: 0.05,
     },
     {
       name: "Canonical",
       href: "https://www.manceps.com/partners/canonical",
-      delay: 0.1,
     },
   ]
 
@@ -119,9 +107,6 @@ const Menu = props => {
         href={partnersMenuItem.href}
         key={index}
         style={{ position: "relative", zIndex: "5000" }}
-        initial={{ x: 200 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: partnersMenuItem.delay, duration: 0.2 }}
       >
         {partnersMenuItem.name}
       </motion.a>
@@ -164,7 +149,6 @@ const Menu = props => {
             {industriesMenuList}
           </div>
         </motion.li>
-
         <motion.li
           initial={{ x: 200 }}
           animate={{ opacity: 1, x: 0 }}

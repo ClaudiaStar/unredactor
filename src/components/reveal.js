@@ -88,14 +88,13 @@ const Reveal = props => {
         data-portal-id={portalId}
         onSubmit={submitForm}
       >
-        <h5>Enter info below to reveal results:</h5>
+        <h5>Get notified when additional tools are published.</h5>
         <input
           type="text"
           placeholder="First name"
           name="first-name"
           value={firstname}
           onChange={e => setFirstname(e.target.value)}
-          required
         />
         <br />
         <input
@@ -104,7 +103,6 @@ const Reveal = props => {
           name="last-name"
           value={lastname}
           onChange={e => setLastname(e.target.value)}
-          required
         />
         <br />
         <input
@@ -113,7 +111,6 @@ const Reveal = props => {
           name="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          required
         />
         <br />
         <button>SEE RESULTS</button>

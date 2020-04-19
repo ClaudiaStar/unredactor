@@ -126,7 +126,8 @@ const Reveal = props => {
       transition={{ ease: "easeOut", duration: 2 }}
     >
       <p className={heroStyles.InputText}>
-        Your input: Beyonce is an <strong>unk unk</strong> and actress.
+        {/* Your input: Beyonce is an <strong>unk unk</strong> and actress. */}
+        {props.inputText}
       </p>
       <h5 className={heroStyles.UnredactedText}>
         Output: Beyonce is an <strong>American Singer</strong> and actress.

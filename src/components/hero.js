@@ -13,6 +13,7 @@ import { motion } from "framer-motion"
 const Hero = () => {
   const [unredactClicked, setUnredactClicked] = useState(false)
   const [homeClicked, setHomeClicked] = useState(true)
+  const [inputText, setInputText] = useState("")
 
   const unredactButtonClickHandler = () => {
     setUnredactClicked(true)
@@ -38,7 +39,12 @@ const Hero = () => {
           Type in your redacted paragraph and use the word "unk" for hidden
           words.
         </h5>
-        <input type="text" />
+        <input
+          type="text"
+          name="inputText"
+          value={inputText}
+          onChange={e => setInputText(e.target.value)}
+        />
         <br />
         <button onClick={unredactButtonClickHandler}>UNREDACT</button>
         <p style={{ paddingTop: "8px" }}>Here's an example:</p>
@@ -122,7 +128,10 @@ const Hero = () => {
         </div>
         {homeClicked ? unredactor : null}
         {unredactClicked ? (
-          <Reveal againButtonClicked={againButtonClickHandler} />
+          <Reveal
+            againButtonClicked={againButtonClickHandler}
+            inputText={inputText}
+          />
         ) : null}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import fetch from "isomorphic-unfetch"
 import Cookies from "js-cookie"
 import { motion } from "framer-motion"
@@ -118,6 +118,64 @@ const Reveal = props => {
     </motion.div>
   )
 
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then(results => {
+        return results.json()
+      })
+      .then(json => {
+        console.log(json)
+      })
+  }, [])
+
+  // this function will be used to get indexes of all "unks"
+  function getAllIndexes(arr, val) {
+    var indexes = [],
+      i
+    for (i = 0; i < arr.length; i++) if (arr[i] === val) indexes.push(i)
+    return indexes
+  }
+
+  //convert input text to array
+  const inputText = props.inputText
+  const inputTextArr = inputText.split(" ")
+
+  // get unk indexes
+  const unkIndexesArr = getAllIndexes(inputText.split(" "), "unk")
+
+  const boldInputText = inputTextArr.map(function(word, i) {
+    const wordIndex = inputTextArr.indexOf(inputTextArr[i])
+    if (unkIndexesArr.includes(wordIndex)) {
+      return <strong key={i}>{word} </strong>
+    } else {
+      return <span key={i}>{word} </span>
+    }
+  })
+
+  // example unredacted words array
+  const unredactedWordsArr = ["tomato", "soup", "potato", "chowder"]
+
+  // zip up unkIndexes and UnredactedWordsArr
+  const unkIndexesAndUnredactedWordsArr = unkIndexesArr.map(function(e, i) {
+    return [e, unredactedWordsArr[i]]
+  })
+
+  // replace unks with unredacted words
+  const unredactedTextArr = [...inputTextArr]
+  for (let i = 0; i < unkIndexesAndUnredactedWordsArr.length; i++) {
+    unredactedTextArr[unkIndexesAndUnredactedWordsArr[i][0]] =
+      unkIndexesAndUnredactedWordsArr[i][1]
+  }
+
+  const boldUnredactedText = unredactedTextArr.map(function(word, i) {
+    const wordIndex = unredactedTextArr.indexOf(unredactedTextArr[i])
+    if (unkIndexesArr.includes(wordIndex)) {
+      return <strong key={i}>{word} </strong>
+    } else {
+      return <span key={i}>{word} </span>
+    }
+  })
+
   let reveal = (
     <motion.div
       className={heroStyles.Unredactor}
@@ -125,13 +183,10 @@ const Reveal = props => {
       animate={{ opacity: 1 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
-      <p className={heroStyles.InputText}>
-        {/* Your input: Beyonce is an <strong>unk unk</strong> and actress. */}
-        {props.inputText}
-      </p>
-      <h5 className={heroStyles.UnredactedText}>
-        Output: Beyonce is an <strong>American Singer</strong> and actress.
-      </h5>
+      <h5>Your input:</h5>
+      <p className={heroStyles.InputText}>{boldInputText}</p>
+      <h5>Unredacted:</h5>
+      <p className={heroStyles.UnredactedText}>{boldUnredactedText}</p>
       <br />
       <br />
       <button onClick={props.againButtonClicked}>DO IT AGAIN</button>

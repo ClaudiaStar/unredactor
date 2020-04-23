@@ -147,8 +147,11 @@ const Menu = props => {
           transition={{ delay: 0.25, duration: 0.2 }}
         >
           <div
+            role="button"
+            tabIndex={0}
             className={menuStyles.IndustriesLabel}
             onClick={toggleIndustriesMenuDisplay}
+            onKeyDown={toggleIndustriesMenuDisplay}
             onMouseEnter={toggleIndustriesMenuDisplay}
             onMouseLeave={toggleIndustriesMenuDisplay}
           >
@@ -175,8 +178,11 @@ const Menu = props => {
           }}
         >
           <div
+            role="button"
+            tabIndex={0}
             className={menuStyles.PartnersLabel}
             onClick={togglePartnersMenuDisplay}
+            onKeyDown={togglePartnersMenuDisplay}
             onMouseEnter={togglePartnersMenuDisplay}
             onMouseLeave={togglePartnersMenuDisplay}
           >

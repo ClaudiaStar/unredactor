@@ -15,9 +15,36 @@ const Hero = () => {
   const [homeClicked, setHomeClicked] = useState(true)
   const [inputText, setInputText] = useState("")
 
+  const sendStringToApi = () => {
+    console.log("here I am")
+    fetch("https://unredactor-3h3pagkfya-uw.a.run.app/unredact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userInput: inputText,
+      }),
+    })
+  }
+
+  const getWordsFromApi = () => {
+    return fetch("https://unredactor-3h3pagkfya-uw.a.run.app/unredact")
+      .then(response => response.json())
+      .then(json => {
+        return json.unredactedWords
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
   const unredactButtonClickHandler = () => {
     setUnredactClicked(true)
     setHomeClicked(false)
+    sendStringToApi()
+    getWordsFromApi()
   }
 
   const againButtonClickHandler = () => {

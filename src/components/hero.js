@@ -14,9 +14,9 @@ const Hero = () => {
   const [unredactClicked, setUnredactClicked] = useState(false)
   const [homeClicked, setHomeClicked] = useState(true)
   const [inputText, setInputText] = useState("")
+  const [predictions, setPredections] = useState([])
 
   const sendStringToApi = () => {
-    console.log("here I am")
     fetch("https://unredactor-3h3pagkfya-uw.a.run.app/unredact", {
       method: "POST",
       headers: {
@@ -24,19 +24,15 @@ const Hero = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        userInput: inputText,
+        text: inputText,
       }),
     })
-  }
-
-  const getWordsFromApi = () => {
-    return fetch("https://unredactor-3h3pagkfya-uw.a.run.app/unredact")
       .then(response => response.json())
-      .then(json => {
-        return json.unredactedWords
+      .then(data => {
+        setPredections(data.predictions)
       })
       .catch(error => {
-        console.error(error)
+        console.error("Error:", error)
       })
   }
 
@@ -44,7 +40,6 @@ const Hero = () => {
     setUnredactClicked(true)
     setHomeClicked(false)
     sendStringToApi()
-    getWordsFromApi()
   }
 
   const againButtonClickHandler = () => {
@@ -160,6 +155,7 @@ const Hero = () => {
           <Reveal
             againButtonClicked={againButtonClickHandler}
             inputText={inputText}
+            predictions={predictions}
           />
         ) : null}
       </div>

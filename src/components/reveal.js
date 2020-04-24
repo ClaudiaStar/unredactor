@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import fetch from "isomorphic-unfetch"
 import Cookies from "js-cookie"
 import { motion } from "framer-motion"
@@ -137,16 +137,6 @@ const Reveal = props => {
     </motion.div>
   )
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
-      .then(results => {
-        return results.json()
-      })
-      .then(json => {
-        console.log(json)
-      })
-  }, [])
-
   // this function will be used to get indexes of all "unks"
   function getAllIndexes(arr, val) {
     var indexes = [],
@@ -172,7 +162,7 @@ const Reveal = props => {
   })
 
   // example unredacted words array
-  const unredactedWordsArr = ["tomato", "soup", "potato", "chowder"]
+  const unredactedWordsArr = props.predictions
 
   // zip up unkIndexes and UnredactedWordsArr
   const unkIndexesAndUnredactedWordsArr = unkIndexesArr.map(function(e, i) {
@@ -197,7 +187,6 @@ const Reveal = props => {
 
   const conditionalComponentRendering = () => {
     const emailCaptured = localStorage.getItem("emailCaptured")
-    console.log(emailCaptured)
     if (success || emailCaptured) {
       return reveal
     } else {

@@ -59,7 +59,7 @@ const Hero = () => {
           <strong>WHAT WOULD YOU LIKE TO UNREDACT?</strong>
         </h1>
         <h5>
-          Type in your redacted paragraph and use the word "unk" for hidden
+          Type in your redacted sentence and use the word "unk" for hidden
           words.
         </h5>
         <input

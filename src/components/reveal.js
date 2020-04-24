@@ -172,6 +172,7 @@ const Reveal = props => {
 
   // example unredacted words array
   const unredactedWordsArr = props.predictions
+  console.log(props.predictions)
 
   // zip up unkIndexes and UnredactedWordsArr
   const unkIndexesAndUnredactedWordsArr = unkIndexesArr.map(function(e, i) {
@@ -185,18 +186,30 @@ const Reveal = props => {
       unkIndexesAndUnredactedWordsArr[i][1]
   }
 
+  let punctuation = " "
+
+  // if (inputText[inputText.length - 1].includes(endOfTrainDevice)) {
+  //   punctuation = endOfTrainDevice
+  // }
+
+  // if (unredactedTextArr[unredactedTextArr.length - 1].slice(0, 2) === "unk") {
+  //   punctuation = endOfTrainDevice
+  //   console.log("Here I am")
+  // }
+
   let boldUnredactedText = unredactedTextArr.map(function(word, i) {
     const wordIndex = unredactedTextArr.indexOf(unredactedTextArr[i])
     if (unkIndexesArr.includes(wordIndex)) {
-      return <strong key={i}>{word} </strong>
+      return <strong key={i}>{word + punctuation}</strong>
     } else {
       return <span key={i}>{word} </span>
     }
   })
 
-  var lengthOfText = boldUnredactedText.length - 1
-  boldUnredactedText[lengthOfText] = endOfTrainDevice
-  console.log(boldUnredactedText)
+  // var lengthOfText = boldUnredactedText.length - 1
+  // boldUnredactedText[lengthOfText] = endOfTrainDevice
+  // console.log(boldUnredactedText)
+  // console.log(boldUnredactedText)
 
   const conditionalComponentRendering = () => {
     const emailCaptured = localStorage.getItem("emailCaptured")

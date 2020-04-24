@@ -21,6 +21,7 @@ const Hero = () => {
   }
 
   const againButtonClickHandler = () => {
+    setInputText("")
     setUnredactClicked(false)
     setHomeClicked(true)
   }
@@ -40,6 +41,7 @@ const Hero = () => {
           words.
         </h5>
         <input
+          required
           type="text"
           name="inputText"
           value={inputText}

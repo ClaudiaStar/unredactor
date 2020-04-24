@@ -69,12 +69,17 @@ const Reveal = props => {
         setFirstname("")
         setLastname("")
         setEmail("")
+        localStorage.setItem("emailCaptured", "true")
       })
       .catch(err => {
         setSuccess(false)
         setError(err)
         setLoading(false)
       })
+  }
+
+  const justShowResultsClickHandler = () => {
+    setSuccess(true)
   }
 
   let emailCaptureForm = (
@@ -95,6 +100,7 @@ const Reveal = props => {
           name="first-name"
           value={firstname}
           onChange={e => setFirstname(e.target.value)}
+          required
         />
         <br />
         <input
@@ -103,6 +109,7 @@ const Reveal = props => {
           name="last-name"
           value={lastname}
           onChange={e => setLastname(e.target.value)}
+          required
         />
         <br />
         <input
@@ -111,9 +118,21 @@ const Reveal = props => {
           name="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
+          required
         />
         <br />
-        <button>SEE RESULTS</button>
+        <button>SUBMIT AND SEE RESULTS</button>
+        <br />
+        <br />
+        <div
+          style={{ textDecoration: "underline", cursor: "pointer" }}
+          onClick={justShowResultsClickHandler}
+          onKeyDown={justShowResultsClickHandler}
+          role="button"
+          tabIndex={0}
+        >
+          No thanks, just show me the results.
+        </div>
       </form>
     </motion.div>
   )
@@ -176,6 +195,16 @@ const Reveal = props => {
     }
   })
 
+  const conditionalComponentRendering = () => {
+    const emailCaptured = localStorage.getItem("emailCaptured")
+    console.log(emailCaptured)
+    if (success || emailCaptured) {
+      return reveal
+    } else {
+      return emailCaptureForm
+    }
+  }
+
   let reveal = (
     <motion.div
       className={heroStyles.Unredactor}
@@ -193,7 +222,7 @@ const Reveal = props => {
     </motion.div>
   )
 
-  return <React.Fragment>{success ? reveal : emailCaptureForm}</React.Fragment>
+  return <React.Fragment>{conditionalComponentRendering()}</React.Fragment>
 }
 
 export default Reveal

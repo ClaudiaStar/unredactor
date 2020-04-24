@@ -150,7 +150,16 @@ const Reveal = props => {
   const inputTextArr = inputText.split(" ")
 
   // get unk indexes
-  const unkIndexesArr = getAllIndexes(inputText.split(" "), "unk")
+  let unkIndexesArr = []
+  let endOfTrainDevice = ""
+  const lastLetter = inputText.slice(-1)
+  const specialChar = [".", "!", "?"]
+  if (specialChar.includes(lastLetter)) {
+    unkIndexesArr = getAllIndexes(inputText.slice(0, -1).split(" "), "unk")
+    endOfTrainDevice = lastLetter
+  } else {
+    unkIndexesArr = getAllIndexes(inputText.split(" "), "unk")
+  }
 
   const boldInputText = inputTextArr.map(function(word, i) {
     const wordIndex = inputTextArr.indexOf(inputTextArr[i])
@@ -176,7 +185,7 @@ const Reveal = props => {
       unkIndexesAndUnredactedWordsArr[i][1]
   }
 
-  const boldUnredactedText = unredactedTextArr.map(function(word, i) {
+  let boldUnredactedText = unredactedTextArr.map(function(word, i) {
     const wordIndex = unredactedTextArr.indexOf(unredactedTextArr[i])
     if (unkIndexesArr.includes(wordIndex)) {
       return <strong key={i}>{word} </strong>
@@ -184,6 +193,10 @@ const Reveal = props => {
       return <span key={i}>{word} </span>
     }
   })
+
+  var lengthOfText = boldUnredactedText.length - 1
+  boldUnredactedText[lengthOfText] = endOfTrainDevice
+  console.log(boldUnredactedText)
 
   const conditionalComponentRendering = () => {
     const emailCaptured = localStorage.getItem("emailCaptured")

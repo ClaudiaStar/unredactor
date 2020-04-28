@@ -6,51 +6,50 @@ const PreviousUnredactionsSection = () => {
   const unredactions = [
     {
       input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
+        "Luke Skywalker is the best jedi unk in the unk Star Wars universe.",
       unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Luke Skywalker is the best jedi superhero in the ultimate Star Wars universe.",
+    },
+    {
+      input: "Life is like a box of unk — you never know what unk gonna get.",
+      unredacted:
+        "Life is like a box of candy — you never know what you gonna get.",
     },
     {
       input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
+        "On the first day of unk my true love gave to me, a unk in a unk tree.",
       unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "On the first day of life my true love gave to me, a leaf in a pine tree.",
     },
     {
-      input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
-      unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      input: "The best part about unk unk is all the unk they have.",
+      unredacted: "The best part about the people is all the fun they have.",
     },
     {
-      input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
-      unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      input: "Mary had a little unk.",
+      unredacted: "Mary had a little laugh.",
     },
     {
-      input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
-      unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      input: "Today is going to be the day that unk unk to unk.",
+      unredacted: "Today is going to be the day that everyone comes to die.",
     },
     {
-      input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
+      input: "Area 51 is a place where unk on unk are common.",
       unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Area 51 is a place where restrictions on bicycles are common.",
     },
     {
-      input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
-      unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      input: "The name of the person who I will marry is unk.",
+      unredacted: "The name of the person who I will marry is unknown.",
     },
     {
-      input:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do unk unk incididunt ut labore et dolore magna aliqua.",
+      input: "There are currently unk lizard people unk the land.",
+      unredacted: "There are currently no lizard people on the land.",
+    },
+    {
+      input: "Chemtrails cause humans to unk and think that the unk is unk.",
       unredacted:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Chemtrails cause humans to panic and think that the disease is toxic.",
     },
   ]
 

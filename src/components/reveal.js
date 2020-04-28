@@ -141,17 +141,32 @@ const Reveal = props => {
   const inputText = props.inputText
   const inputTextArr = inputText.split(" ")
 
+  const upperCaseUnkIndexes = []
+  console.log(inputTextArr)
+  for (let i = 0; i < inputTextArr.length; i++) {
+    if (inputTextArr[i].includes("Unk")) {
+      inputTextArr[i] = inputTextArr[i].toLowerCase()
+      upperCaseUnkIndexes.push(i)
+    }
+  }
+
+  console.log(upperCaseUnkIndexes)
+
+  console.log(inputTextArr)
+
   // get unk indexes
   let unkIndexesArr = []
 
   const specialChar = [",", ".", "!", "?", "-", ":", ";"]
 
   for (let i = 0; i < inputTextArr.length; i++) {
+    const unkWithSpecialChar =
+      inputTextArr[i].slice(-1) && inputTextArr[i].includes("unk")
+
     if (
-      specialChar.includes(
-        inputTextArr[i].slice(-1) && inputTextArr[i].includes("unk")
-      ) ||
-      inputTextArr[i].includes("unk")
+      specialChar.includes(unkWithSpecialChar) ||
+      inputTextArr[i].includes("unk") ||
+      inputTextArr[i].includes("Unk")
     ) {
       unkIndexesArr.push(i)
     }
@@ -181,6 +196,14 @@ const Reveal = props => {
         unredactedWordsCopy[0]
       )
       unredactedWordsCopy.shift()
+    }
+  }
+
+  for (let i = 0; i < unredactedTextArr.length; i++) {
+    if (upperCaseUnkIndexes.includes(i)) {
+      unredactedTextArr[i] =
+        unredactedTextArr[i].charAt(0).toUpperCase() +
+        unredactedTextArr[i].slice(1)
     }
   }
 

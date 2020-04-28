@@ -24,7 +24,7 @@ const Hero = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        text: inputText,
+        text: inputText.toLowerCase(),
       }),
     })
       .then(response => response.json())

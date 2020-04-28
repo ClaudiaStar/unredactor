@@ -137,36 +137,32 @@ const Reveal = props => {
     </motion.div>
   )
 
-  // this function will be used to get indexes of all "unks"
-  function getAllIndexes(arr, val) {
-    var indexes = [],
-      i
-    for (i = 0; i < arr.length; i++) if (arr[i] === val) indexes.push(i)
-    return indexes
-  }
-
   //convert input text to array
   const inputText = props.inputText
   const inputTextArr = inputText.split(" ")
 
   // get unk indexes
   let unkIndexesArr = []
-  let endOfTrainDevice = ""
-  const lastLetter = inputText.slice(-1)
-  const specialChar = [".", "!", "?"]
-  if (specialChar.includes(lastLetter)) {
-    unkIndexesArr = getAllIndexes(inputText.slice(0, -1).split(" "), "unk")
-    endOfTrainDevice = lastLetter
-  } else {
-    unkIndexesArr = getAllIndexes(inputText.split(" "), "unk")
+
+  const specialChar = [",", ".", "!", "?", "-", ":", ";"]
+
+  for (let i = 0; i < inputTextArr.length; i++) {
+    if (
+      specialChar.includes(
+        inputTextArr[i].slice(-1) && inputTextArr[i].includes("unk")
+      ) ||
+      inputTextArr[i].includes("unk")
+    ) {
+      unkIndexesArr.push(i)
+    }
   }
 
   const boldInputText = inputTextArr.map(function(word, i) {
-    const wordIndex = inputTextArr.indexOf(inputTextArr[i])
-    if (unkIndexesArr.includes(wordIndex)) {
-      return <strong key={i}>{word} </strong>
+    const space = " "
+    if (unkIndexesArr.includes(i)) {
+      return <strong key={i}>{word + space}</strong>
     } else {
-      return <span key={i}>{word} </span>
+      return <span key={i}>{word + space}</span>
     }
   })
 
@@ -174,42 +170,30 @@ const Reveal = props => {
   const unredactedWordsArr = props.predictions
   console.log(props.predictions)
 
-  // zip up unkIndexes and UnredactedWordsArr
-  const unkIndexesAndUnredactedWordsArr = unkIndexesArr.map(function(e, i) {
-    return [e, unredactedWordsArr[i]]
-  })
-
   // replace unks with unredacted words
   const unredactedTextArr = [...inputTextArr]
-  for (let i = 0; i < unkIndexesAndUnredactedWordsArr.length; i++) {
-    unredactedTextArr[unkIndexesAndUnredactedWordsArr[i][0]] =
-      unkIndexesAndUnredactedWordsArr[i][1]
+  const unredactedWordsCopy = [...unredactedWordsArr]
+
+  for (let i = 0; i < unredactedTextArr.length; i++) {
+    if (unredactedTextArr[i].search("unk") !== -1) {
+      unredactedTextArr[i] = unredactedTextArr[i].replace(
+        "unk",
+        unredactedWordsCopy[0]
+      )
+      unredactedWordsCopy.shift()
+    }
   }
 
-  let punctuation = " "
-
-  // if (inputText[inputText.length - 1].includes(endOfTrainDevice)) {
-  //   punctuation = endOfTrainDevice
-  // }
-
-  // if (unredactedTextArr[unredactedTextArr.length - 1].slice(0, 2) === "unk") {
-  //   punctuation = endOfTrainDevice
-  //   console.log("Here I am")
-  // }
+  console.log(unredactedTextArr)
 
   let boldUnredactedText = unredactedTextArr.map(function(word, i) {
-    const wordIndex = unredactedTextArr.indexOf(unredactedTextArr[i])
-    if (unkIndexesArr.includes(wordIndex)) {
-      return <strong key={i}>{word + punctuation}</strong>
+    let space = " "
+    if (unkIndexesArr.includes(i)) {
+      return <strong key={i}>{word + space}</strong>
     } else {
-      return <span key={i}>{word} </span>
+      return <span key={i}>{word + space} </span>
     }
   })
-
-  // var lengthOfText = boldUnredactedText.length - 1
-  // boldUnredactedText[lengthOfText] = endOfTrainDevice
-  // console.log(boldUnredactedText)
-  // console.log(boldUnredactedText)
 
   const conditionalComponentRendering = () => {
     const emailCaptured = localStorage.getItem("emailCaptured")
